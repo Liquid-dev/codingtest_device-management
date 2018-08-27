@@ -18,10 +18,8 @@ ActiveRecord::Schema.define(version: 2018_08_16_100317) do
     t.string "name"
     t.integer "os_type"
     t.string "version"
-    t.integer "status"
     t.integer "code"
     t.index ["os_type"], name: "index_devices_on_os_type"
-    t.index ["status"], name: "index_devices_on_status"
     t.index ["version"], name: "index_devices_on_version"
   end
 
