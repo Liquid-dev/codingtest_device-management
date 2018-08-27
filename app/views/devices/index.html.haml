@@ -1,0 +1,26 @@
+%p#notice= notice
+%h1 Devices
+%table
+  %thead
+    %tr
+      %th{:colspan => "3"}
+  %tbody
+    %tr
+      %th= 'Device name'
+      %th= 'OS'
+      %th= 'Version'
+      %th= 'Status'
+      %th
+      %th
+      %th
+    - @devices.each do |device|
+      %tr
+        %td= device.name
+        %td= device.os_type
+        %td= device.version
+        %td= device.status
+        %td= link_to 'Show', device
+        %td= link_to 'Edit', edit_device_path(device)
+        %td= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Device', new_device_path
