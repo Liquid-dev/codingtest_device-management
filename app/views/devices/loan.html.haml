@@ -1,0 +1,6 @@
+%h1 Loan Device
+
+= select_tag :customer_id, options_from_collection_for_select(User.all, :id, :name)
+= select_tag :customer_id, options_from_collection_for_select(@device, :id, :name)
+
+= link_to '借りる', edit_device_path(@device)

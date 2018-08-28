@@ -21,6 +21,10 @@ class DevicesController < ApplicationController
   def edit
   end
 
+  def loan
+	@device = Device.where(users_id: nil)
+  end
+
   # POST /devices
   # POST /devices.json
   def create

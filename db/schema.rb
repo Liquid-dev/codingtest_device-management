@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_100317) do
+ActiveRecord::Schema.define(version: 2018_08_28_004806) do
 
   create_table "devices", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 2018_08_16_100317) do
     t.integer "os_type"
     t.string "version"
     t.integer "code"
+    t.integer "users_id"
+    t.integer "user_id"
     t.index ["os_type"], name: "index_devices_on_os_type"
+    t.index ["users_id"], name: "index_devices_on_users_id"
     t.index ["version"], name: "index_devices_on_version"
   end
 
